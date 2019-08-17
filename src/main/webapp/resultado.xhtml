@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <h:form id="formulario2">
+            <h:panelGrid columns="2">
+                <h:outputText value="Señor: "></h:outputText>
+                <h:outputText value="#{resultado.nombre} "></h:outputText>
+                
+                <h:outputText value="Con un salario diario de: "></h:outputText>
+                <h:outputText value="#{index.salarioDia} "></h:outputText>
+                
+                <h:outputText value="Con un total de dias trabajados de: "></h:outputText>
+                <h:outputText value="#{index.diasTrabajados} "></h:outputText>
+                
+                <h:outputText value="Y ya que habla: "></h:outputText>
+                <h:dataTable value="#{index.idiomas}" var="item">
+                    <h:column>
+                        <h:outputText value="#{item}"></h:outputText>
+                    </h:column>
+                </h:dataTable>
+               
+                <h:outputText value="Su salario es de: "></h:outputText>
+                <h:outputText value="#{resultado.CalculoSalario(index.salarioDia,index.diasTrabajados, index.idiomas)}"></h:outputText>
+            </h:panelGrid>
+        </h:form>
+
+    </h:body>
+
+</html>
